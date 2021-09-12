@@ -58,6 +58,7 @@ public class EmpleadoController {
 	@ApiOperation(value="Registrar trabajador", 
 			notes="Registro de nuevo trabajador")
 	public ResponseEntity<Object> registrar(@Valid @RequestBody Empleado empleado) {
+		@SuppressWarnings("unused")
 		Empleado obj = service.save(empleado);
 		
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(empleado.getIdEmpleado()).toUri();

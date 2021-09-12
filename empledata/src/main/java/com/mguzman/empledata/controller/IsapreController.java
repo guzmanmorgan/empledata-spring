@@ -58,6 +58,7 @@ public class IsapreController {
 	@ApiOperation(value="Registrar Isapre", 
 			notes="Registro de nueva Isapre")
 	public ResponseEntity<Object> registrar(@Valid @RequestBody Isapre isapre) {
+		@SuppressWarnings("unused")
 		Isapre obj = service.save(isapre);
 		
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(isapre.getIdIsapre()).toUri();

@@ -58,6 +58,7 @@ public class SucursalController {
 	@ApiOperation(value="Registrar sucursales", 
 			notes="Registro de nueva sucursal")
 	public ResponseEntity<Object> registrar(@Valid @RequestBody Sucursal sucursal) {
+		@SuppressWarnings("unused")
 		Sucursal obj = service.save(sucursal);
 		
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(sucursal.getIdSucursal()).toUri();

@@ -58,6 +58,7 @@ public class AfpController {
 	@ApiOperation(value="Registrar AFP", 
 			notes="Registro de nueva AFP")
 	public ResponseEntity<Object> registrar(@Valid @RequestBody Afp afp) {
+		@SuppressWarnings("unused")
 		Afp obj = service.save(afp);
 		
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(afp.getIdAfp()).toUri();

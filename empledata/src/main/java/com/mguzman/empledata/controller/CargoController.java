@@ -58,6 +58,7 @@ public class CargoController {
 	@ApiOperation(value="Registrar cargos", 
 			notes="Registro de nuevo cargo")
 	public ResponseEntity<Object> registrar(@Valid @RequestBody Cargo cargo) {
+		@SuppressWarnings("unused")
 		Cargo obj = service.save(cargo);
 		
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(cargo.getIdCargo()).toUri();
