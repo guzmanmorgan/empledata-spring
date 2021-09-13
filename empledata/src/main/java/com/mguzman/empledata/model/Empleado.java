@@ -48,7 +48,7 @@ public class Empleado {
 	
 	@ApiModelProperty(notes = "Direccion debe tener entre 2 y 20 caracteres")
 	@Size(min = 2, max = 20, message = "La direccion debe contener mínimo 2 caracteres")
-	@Column(name = "direccion_sucursal", nullable = false, length = 20)
+	@Column(name = "direccion", nullable = false, length = 20)
 	private String direccion;
 	
 	@ManyToOne
