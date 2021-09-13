@@ -2,6 +2,7 @@ package com.mguzman.empledata.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -51,22 +52,22 @@ public class Empleado {
 	@Column(name = "direccion_sucursal", nullable = false, length = 20)
 	private String direccion;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_cargo", nullable = false, foreignKey = @ForeignKey(name = "FK_empkleado_cargo"))
 	@JsonIgnoreProperties(value={"empleado"})
     private Cargo cargo;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_sucursal", nullable = false, foreignKey = @ForeignKey(name = "FK_empleado_sucursal"))
 	@JsonIgnoreProperties(value={"empleado"})
     private Sucursal sucursal;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_afp", nullable = false, foreignKey = @ForeignKey(name = "FK_empleado_afp"))
 	@JsonIgnoreProperties(value={"empleado"})
     private Afp afp;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_isapre", nullable = false, foreignKey = @ForeignKey(name = "FK_empleado_isapre"))
 	@JsonIgnoreProperties(value={"empleado"})
     private Isapre isapre;
