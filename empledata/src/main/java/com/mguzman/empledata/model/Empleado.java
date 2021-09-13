@@ -52,22 +52,22 @@ public class Empleado {
 	@Column(name = "direccion_sucursal", nullable = false, length = 20)
 	private String direccion;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
     @JoinColumn(name = "id_cargo", nullable = false, foreignKey = @ForeignKey(name = "FK_empkleado_cargo"))
 	@JsonIgnoreProperties(value={"empleado"})
     private Cargo cargo;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
     @JoinColumn(name = "id_sucursal", nullable = false, foreignKey = @ForeignKey(name = "FK_empleado_sucursal"))
 	@JsonIgnoreProperties(value={"empleado"})
     private Sucursal sucursal;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
     @JoinColumn(name = "id_afp", nullable = false, foreignKey = @ForeignKey(name = "FK_empleado_afp"))
 	@JsonIgnoreProperties(value={"empleado"})
     private Afp afp;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
     @JoinColumn(name = "id_isapre", nullable = false, foreignKey = @ForeignKey(name = "FK_empleado_isapre"))
 	@JsonIgnoreProperties(value={"empleado"})
     private Isapre isapre;
