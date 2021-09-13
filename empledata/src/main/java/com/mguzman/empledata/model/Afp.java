@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,7 +33,7 @@ public class Afp {
 	@Column(name = "nombre_afp", nullable = false, length = 20)
 	private String nombreAfp;
 	
-	@OneToMany(mappedBy = "afp", cascade = { CascadeType.ALL }, orphanRemoval = true)
+	@OneToMany(mappedBy = "afp", cascade = { CascadeType.ALL }, orphanRemoval = true, fetch = FetchType.LAZY)
 	@JsonIgnoreProperties(value={"afp"})
 	private List<Empleado> empleado;
 

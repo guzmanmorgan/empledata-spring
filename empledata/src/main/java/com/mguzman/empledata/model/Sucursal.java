@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -37,7 +38,7 @@ public class Sucursal {
 	@Column(name = "direccion_sucursal", nullable = false, length = 20)
 	private String direccionSucursal;
 	
-	@OneToMany(mappedBy = "sucursal", cascade = { CascadeType.ALL }, orphanRemoval = true)
+	@OneToMany(mappedBy = "sucursal", cascade = { CascadeType.ALL }, orphanRemoval = true, fetch = FetchType.LAZY)
 	@JsonIgnoreProperties(value={"sucursal"})
 	private List<Empleado> empleado;
 
