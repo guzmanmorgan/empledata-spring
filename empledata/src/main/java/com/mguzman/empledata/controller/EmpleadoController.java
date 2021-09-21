@@ -80,5 +80,7 @@ public class EmpleadoController {
 		service.deleteById(id);
 		return new ResponseEntity<Object>(HttpStatus.OK);
 	}
+	
+	
 
 }
