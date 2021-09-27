@@ -1,19 +1,24 @@
 package com.mguzman.empledata.dto;
 
-import java.io.Serializable;
+import com.mguzman.empledata.model.Cargo;
 
-import com.mguzman.empledata.model.Empleado;
-
-public class EmpleadoDTO implements Serializable{
-		
-	private Empleado empleado;
-
-	public Empleado getEmpleado() {
-		return empleado;
+public class EmpleadoDTO {
+	
+	private Integer idEmpleado;
+	private Cargo cargo;
+	public Integer getIdEmpleado() {
+		return idEmpleado;
 	}
-
-	public void setEmpleado(Empleado empleado) {
-		this.empleado = empleado;
+	public void setIdEmpleado(Integer idEmpleado) {
+		this.idEmpleado = idEmpleado;
 	}
-		
+	public Cargo getCargo() {
+		return cargo;
+	}
+	public void setCargo(Cargo cargo) {
+		this.cargo = cargo;
+	}
+	
+	
+
 }

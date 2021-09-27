@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/tokens")
 public class TokenController {
 	
-    @Autowired
-    private ConsumerTokenServices tokenServices;
+	  @Autowired
+	    private ConsumerTokenServices tokenServices;
 
-    @GetMapping("/anular/{tokenId:.*}")
-    public void revocarToken(@PathVariable("tokenId") String token) {
-        tokenServices.revokeToken(token);
+	    @GetMapping("/anular/{tokenId:.*}")
+	    public void revocarToken(@PathVariable("tokenId") String token) {
+	        tokenServices.revokeToken(token);
 
-    }
+	    }
 
 }

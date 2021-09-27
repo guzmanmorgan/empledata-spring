@@ -46,14 +46,14 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/swagger.ui.html/**").permitAll()
-                .antMatchers("/afps/**").permitAll()
-                .antMatchers("/cargos/**").permitAll()
-                .antMatchers("/isapres/**").permitAll()
-                .antMatchers("/sucursales/**").permitAll()
-                .antMatchers("/tokens/**").permitAll()
-                .antMatchers("/empleados/**").permitAll()
-                .antMatchers("/usuarios/").permitAll()
-                .antMatchers("/usuarios/getAll/**").hasRole("USER");
+                .antMatchers("/afps/**").hasAnyAuthority("ADMIN", "USER")
+                .antMatchers("/rol/**").hasRole("ADMIN")
+                .antMatchers("/cargo/**").hasAnyAuthority("ADMIN", "USER")
+                .antMatchers("/empleados/**").hasAnyAuthority("ADMIN", "USER")
+                .antMatchers("/isapres/**").hasAnyAuthority("ADMIN", "USER")
+                .antMatchers("/sucursales/**").hasAnyAuthority("ADMIN", "USER")
+                .antMatchers("/usuario/**").hasAnyAuthority();
+
     }
 
 }

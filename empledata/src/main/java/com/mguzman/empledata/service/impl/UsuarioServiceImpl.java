@@ -1,5 +1,9 @@
 package com.mguzman.empledata.service.impl;
 
+import com.mguzman.empledata.model.Usuario;
+import com.mguzman.empledata.repository.UsuarioRepository;
+import com.mguzman.empledata.service.UsuarioService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -9,16 +13,12 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.mguzman.empledata.model.Usuario;
-import com.mguzman.empledata.repository.UsuarioRepository;
-import com.mguzman.empledata.service.UsuarioService;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UsuarioServiceImpl implements UserDetailsService, UsuarioService{
+public class UsuarioServiceImpl implements UserDetailsService, UsuarioService {
 	
 	@Autowired
 	private UsuarioRepository usuarioRepository;

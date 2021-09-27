@@ -49,6 +49,7 @@ public class EmpleadoServiceImpl implements EmpleadoService{
 		}
 		empleadoRepository.deleteById(id);
 		return true;
-	}	
+	}
+
 
 }
